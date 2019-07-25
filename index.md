@@ -4,7 +4,7 @@
 
 ### Research Interests
 
-I am a sociologist who uses both computational and qualitative methods to uncover hidden structures of economic and ideological dynamics. 
+I am a sociologist who uses both computational and qualitative methods to uncover hidden structures of economic and ideological systems. 
 
 
 
