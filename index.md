@@ -2,7 +2,7 @@
 
 
 
-<a href="<https://github.com/linzhuoliSOC/linzhuoliSOC.github.io/blob/master/blog/CV_Linzhuo%20Li_Chicago_Jul2019.pdf>">CV</a>
+[./blog/CV_Linzhuo%20Li_Chicago_Jul2019.pdf](Download CV)
 
 ### Research Interests
 
