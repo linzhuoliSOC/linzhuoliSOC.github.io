@@ -2,6 +2,8 @@
 
 
 
+<a href="<https://github.com/linzhuoliSOC/linzhuoliSOC.github.io/blob/master/blog/linzhuoli_cv.html>">CV</a>
+
 ### Research Interests
 
 I am a sociologist who uses both computational and qualitative methods to uncover hidden structures of economic and ideological systems. 
