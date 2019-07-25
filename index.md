@@ -1,4 +1,4 @@
-## Welcome to Linzhuo's Home Pages
+## Welcome to Linzhuo's Home Page
 
 
 
@@ -11,8 +11,9 @@ I am a sociologist who uses both computational and qualitative methods to uncove
 ### A glimpse of my projects
 
 - Fashion Production in China's Children's Wear Markets
-- People's Daily 
+- Ideological changes in *People's Daily*.
 - Political Discussion on *Zhihu* during the 2016 U.S. presidential election.
+- Hyperbolic embeddings reveal polarizations in Physics.
 - *Zhihu* tags embedded in hyperbolic space.
 
 
