@@ -2,7 +2,7 @@
 
 
 
-[./blog/CV_Linzhuo%20Li_Chicago_Jul2019.pdf](Download CV)
+[Download CV](./blog/CV_Linzhuo%20Li_Chicago_Jul2019.pdf)
 
 ### Research Interests
 
