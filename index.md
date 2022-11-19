@@ -6,18 +6,24 @@
 
 ### Research Interests
 
-I am a sociologist who uses both computational and qualitative methods to uncover hidden structures of economic and ideological systems. 
+I am a sociologist who uses both computational and qualitative methods to uncover hidden structures of economic and cultural complex systems. 
 
 
 
 ### A glimpse of my projects
 
-- Fashion Production in China's Children's Wear Markets
-- Ideological changes in *People's Daily*.
-- Political Discussion on *Zhihu* during the 2016 U.S. presidential election.
-- Hyperbolic embeddings reveal polarizations in Physics.
-- *Zhihu* tags embedded in hyperbolic space.
+#### Economic Complexity
 
+- Complex manufacuring activities concentrate in large cities of China.
+- Tacit and explicit knowledge of complex jobs have divergent urban scaling patterns. 
+- Uncertainty, liquidity and alternative forms of cultural sophitication in China's Children's Fashion Wear Markets.
+
+#### Cultural and Knowledge Complexity
+
+- Hyperbolic embeddings reveal the complex knowledge structure of modern Physics.
+
+- Ideological transformation in China's *People's Daily*.
+- Political Discussion on *Zhihu* during the 2016 U.S. presidential election.
 
 
 
