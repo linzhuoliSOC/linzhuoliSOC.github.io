@@ -6,7 +6,7 @@
 
 ### Research Interests
 
-I am a sociologist who uses both computational and qualitative methods to uncover hidden structures of economic and cultural complex systems. 
+I am a sociologist who uses both computational and qualitative methods to uncover hidden structures of economic and cultural complex systems. I am interested in understanding novelty, innovation, and disruption in knowledge and economy, with a particular focus on their relations to social hierarchy. 
 
 
 
