@@ -6,7 +6,7 @@
 
 ### Research Interests
 
-I am a sociologist who uses both computational and qualitative methods to uncover hidden structures of economic and cultural complex systems. I am interested in understanding novelty, innovation, and disruption in knowledge and economy, with a particular focus on their relations to social inequality, interpretability and uncertainty. 
+I am a sociologist who uses both computational and qualitative methods to uncover hidden structures of knowledge and cultural complex systems. I am interested in production of knowledge, innovation, and social norms of technology, with a particular focus on interpretability,  uncertainty,  inequality, and disruptive changes in knowledge economy. 
 
 
 
