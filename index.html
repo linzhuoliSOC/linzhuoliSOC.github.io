@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linzhuo Li | Sociologist & Computational Social Scientist</title>
+  <meta name="description" content="Sociologist using computational and qualitative methods to study knowledge production and social dynamics of uncertainty and innovation.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #fffaf8;
+      --primary-light: #ffffff;
+      --accent: #c43a52;
+      --accent-glow: rgba(196, 58, 82, 0.2);
+      --text: #2d1f2f;
+      --text-muted: #7a6b7d;
+      --gradient-1: #fffaf8;
+      --gradient-2: #fff0ee;
+      --gradient-3: #fce8e4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--primary);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(135deg, var(--gradient-1) 0%, var(--gradient-2) 50%, var(--gradient-3) 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    .bg-animation::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(196, 58, 82, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(220, 120, 120, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 180, 170, 0.08) 0%, transparent 40%);
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Floating particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(196, 58, 82, 0.18);
+      border-radius: 50%;
+      animation: float 20s infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1.5rem 3rem;
+      z-index: 1000;
+      background: rgba(255, 250, 248, 0.82);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(196, 58, 82, 0.08);
+    }
+
+    nav .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #2d1f2f 0%, #c43a52 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 900px;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      background: rgba(196, 58, 82, 0.08);
+      border: 1px solid rgba(196, 58, 82, 0.18);
+      border-radius: 50px;
+      font-size: 0.875rem;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #2d1f2f 0%, #c43a52 40%, #2d1f2f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: shimmer 5s linear infinite;
+    }
+
+    @keyframes shimmer {
+      to { background-position: 200% center; }
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      background: rgba(45, 31, 47, 0.04);
+      color: var(--text);
+      border: 1px solid rgba(45, 31, 47, 0.12);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(45, 31, 47, 0.08);
+      border-color: rgba(45, 31, 47, 0.2);
+    }
+
+    /* Section Base */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, #2d1f2f 0%, #c43a52 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* About Section */
+    .about {
+      background: rgba(255,255,255,0.6);
+      border-radius: 24px;
+      margin: 2rem auto;
+      padding: 4rem;
+      border: 1px solid rgba(196, 58, 82, 0.08);
+      box-shadow: 0 4px 40px rgba(196, 58, 82, 0.04);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text {
+      font-size: 1.125rem;
+      line-height: 2;
+      color: var(--text-muted);
+    }
+
+    .about-text strong {
+      color: var(--text);
+    }
+
+    .interests h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    .interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .tag {
+      padding: 0.6rem 1.2rem;
+      background: rgba(196, 58, 82, 0.06);
+      border: 1px solid rgba(196, 58, 82, 0.14);
+      border-radius: 50px;
+      font-size: 0.875rem;
+      color: var(--accent);
+      transition: all 0.3s;
+    }
+
+    .tag:hover {
+      background: rgba(196, 58, 82, 0.12);
+      transform: translateY(-2px);
+    }
+
+    /* Research Gallery */
+    .gallery {
+      padding-top: 4rem;
+    }
+
+    .gallery-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 0.75rem 1.5rem;
+      background: transparent;
+      border: 1px solid rgba(45, 31, 47, 0.1);
+      border-radius: 50px;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s;
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+
+    .tab-btn:hover, .tab-btn.active {
+      background: rgba(196, 58, 82, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .gallery-showcase {
+      position: relative;
+      min-height: 500px;
+    }
+
+    .gallery-item {
+      display: none;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .gallery-item.active {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .figure-container {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid rgba(196, 58, 82, 0.08);
+      box-shadow: 0 8px 40px rgba(196, 58, 82, 0.06);
+    }
+
+    .figure-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .figure-container:hover img {
+      transform: scale(1.02);
+    }
+
+    .figure-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem;
+      background: linear-gradient(transparent, rgba(255, 250, 248, 0.95));
+    }
+
+    .figure-category {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+    }
+
+    .figure-content h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    .figure-content p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .figure-meta {
+      display: flex;
+      gap: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      flex-wrap: wrap;
+    }
+
+    .figure-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Gallery Navigation */
+    .gallery-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-nav-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(45, 31, 47, 0.04);
+      border: 1px solid rgba(45, 31, 47, 0.1);
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      transition: all 0.3s;
+    }
+
+    .gallery-nav-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .gallery-dots {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(45, 31, 47, 0.15);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .dot.active {
+      width: 24px;
+      border-radius: 4px;
+      background: var(--accent);
+    }
+
+    /* CV Section */
+    .cv-section {
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .cv-card {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid rgba(196, 58, 82, 0.08);
+      overflow: hidden;
+      box-shadow: 0 4px 40px rgba(196, 58, 82, 0.04);
+    }
+
+    .cv-header {
+      padding: 2rem;
+      border-bottom: 1px solid rgba(196, 58, 82, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .cv-header h3 {
+      font-size: 1.5rem;
+      color: var(--text);
+    }
+
+    .cv-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .cv-embed {
+      height: 700px;
+      background: white;
+    }
+
+    .cv-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(196, 58, 82, 0.08);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .gallery-item.active {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .gallery-item.active .figure-content {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .hero {
+        padding: 6rem 1.5rem 3rem;
+      }
+      
+      .about {
+        padding: 2rem;
+        margin: 1rem;
+      }
+      
+      section {
+        padding: 4rem 1.5rem;
+      }
+      
+      .cv-embed {
+        height: 500px;
+      }
+
+      .gallery-showcase {
+        min-height: 400px;
+      }
+    }
+
+    /* Scroll animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-animation"></div>
+  <div class="particles" id="particles"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">Linzhuo Li</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#cv">CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      
+      <h1>Linzhuo Li</h1>
+      <p class="hero-subtitle">Assistant Professor of Sociology, Zhejiang University</p>
+      <p class="hero-description">
+        I use computational and qualitative methods to uncover hidden structures 
+        of knowledge and cultural complex systems, focusing on uncertainty and innovation.
+      </p>
+      <div class="hero-cta">
+        <a href="#research" class="btn btn-primary">View Research</a>
+        <a href="#cv" class="btn btn-secondary">Download CV</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about reveal">
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a sociologist who uses both <strong>computational</strong> and 
+            <strong>qualitative methods</strong> to uncover hidden structures of 
+            knowledge and cultural complex systems. 
+          </p>
+          <p style="margin-top: 1.5rem;">
+            I am particularly interested in <strong>uncertainty</strong>, <strong>recombination of knowledge</strong>, and <strong>disruptive changes</strong> in the knowledge economy. My work combines network analysis, machine learning, and qualitative 
+            methods to understand how new scientific knowledge is created, and how uncertainty is
+            transformed in contemporary societies.
+          </p>
+        </div>
+        <div class="interests">
+          <h3>Research Areas</h3>
+          <div class="interest-tags">
+            <span class="tag">Knowledge Production</span>
+            <span class="tag">Uncertainty</span>
+            <span class="tag">Innovation</span>
+            <span class="tag">Science of Science</span>
+            <span class="tag">Computational Social Science</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Gallery Section -->
+  <section id="research" class="gallery">
+    <div class="section-header reveal">
+      <h2>Research Highlights</h2>
+      <p>Key findings from my research on knowledge, innovation, and uncertainty</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="gallery-tabs reveal">
+      <button class="tab-btn active" data-filter="all">All</button>
+      <button class="tab-btn" data-filter="science">Science of Science</button>
+      <button class="tab-btn" data-filter="culture">Uncertainty</button>
+      <button class="tab-btn" data-filter="urban">Urban Scaling of Knowledge</button>
+    </div>
+
+    <!-- Gallery Showcase -->
+    <div class="gallery-showcase reveal">
+
+      <!-- Item 4: Knowledge Scaling -->
+      <div class="gallery-item" data-category="urban">
+        <div class="figure-container">
+          <img src="assets/images/research-figures/placeholder-4.png" alt="Diverging Urban Scaling of Knowledge">
+          <div class="figure-overlay">
+            <span class="figure-category">Urban Scaling of Knowledge</span>
+          </div>
+        </div>
+        <div class="figure-content">
+          <h3>Explicit and Tacit Knowledge Have Diverging Urban Growth Patterns</h3>
+          <p>
+            Using over 4.6 million online job recruitment records across 288 Chinese cities, 
+            this study reveals that explicit knowledge (measured by education requirements) and 
+            tacit knowledge (measured by experience requirements) exhibit opposite urban scaling 
+            patterns. Jobs demanding higher explicit knowledge concentrate more sharply in large 
+            cities, while jobs requiring deeper tacit know-how scale more slowly — suggesting 
+            that the engines of continued urban growth are increasingly biased towards 
+            institutionalized, academic knowledge rather than experience-based expertise.
+          </p>
+          <div class="figure-meta">
+            <span>📈 Urban Scaling</span>
+            <span>🧠 Knowledge Economy</span>
+            <span>📄 npj Urban Sustainability</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item: Complex Manufacturing and Knowledge Complexity -->
+      <div class="gallery-item" data-category="urban">
+        <div class="figure-container">
+          <img src="assets/images/research-figures/placeholder-5.png" alt="Complex Manufacturing and Urban Concentration">
+          <div class="figure-overlay">
+            <span class="figure-category">Urban Scaling of Knowledge</span>
+          </div>
+        </div>
+        <div class="figure-content">
+          <h3>Why Complex Manufacturing Concentrates in Large Cities: Diversity over Efficiency</h3>
+          <p>
+            Analyzing 30 manufacturing sub-sectors across 205 Chinese cities, this study 
+            disentangles urban scaling, returns to agglomeration, and knowledge complexity. 
+            A key finding challenges conventional wisdom: sectors that concentrate most in 
+            large cities are not those with the highest productivity returns, but those with 
+            the greatest knowledge complexity. This suggests that the growth of complex 
+            economic activities hinges more on urban diversity (the availability of diverse 
+            knowledge components for recombination) than on efficiency gains from scale, 
+            reframing how we understand the geography of innovation.
+          </p>
+          <div class="figure-meta">
+            <span>🧩 Economic Complexity</span>
+            <span>💡 Innovation & Diversity</span>
+            <span>📄 PLoS ONE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6: Fashion Markets -->
+      <div class="gallery-item" data-category="culture">
+        <div class="figure-container">
+          <img src="assets/images/research-figures/placeholder-6.png" alt="Fashion Markets">
+          <div class="figure-overlay">
+            <span class="figure-category">Uncertainty</span>
+          </div>
+        </div>
+        <div class="figure-content">
+          <h3>Uncertainty and Backloaded Institution in Markets</h3>
+          <p>
+            This study examines the cultural logic of uncertainty in China's children's fashion industry, and shows why familiar coordination devices, such as Order Fairs, remain peripheral to this market. 
+          </p>
+          <div class="figure-meta">
+            <span> Ethnography</span>
+            <span>🛍️ Economic Sociology</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 7: Social Centralization and Semantic Collapse -->
+      <div class="gallery-item" data-category="science">
+        <div class="figure-container">
+          <img src="assets/images/research-figures/placeholder-7.png" alt="Social Centralization and Semantic Collapse">
+          <div class="figure-overlay">
+            <span class="figure-category">Science of Science</span>
+          </div>
+        </div>
+        <div class="figure-content">
+          <h3>Social Centralization and Semantic Collapse: Hyperbolic Embeddings of Networks and Text</h3>
+          <p>
+            This study introduces hyperbolic embedding methods to map social networks and 
+            semantic combinations into comparable Poincaré disk spaces, where radius captures 
+            hierarchy and angle captures diversity. Analyzing 21st Century physics publications 
+            from the American Physical Society, the research demonstrates that dense, centralized 
+            collaboration among institutions is associated with a sharp reduction in the diversity 
+            of ideas explored.
+          </p>
+          <div class="figure-meta">
+            <span>🕸️ Hyperbolic Geometry</span>
+            <span>🔬 Sociology of Science</span>
+            <span>📄 Poetics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item9: Prestige, Experience, and AI Knowledge Use -->
+      <div class="gallery-item" data-category="science">
+        <div class="figure-container">
+          <img src="assets/images/research-figures/placeholder-9.png" alt="Diverging Effect of Prestige and Experience on AI Knowledge Use">
+          <div class="figure-overlay">
+            <span class="figure-category">Science of Science</span>
+          </div>
+        </div>
+        <div class="figure-content">
+          <h3>The Diverging Effect of Prestige and Experience on the Use of AI Knowledge</h3>
+          <p>
+            Analyzing citation patterns from 5 million papers (1990–2024) and 1.1 million 
+            authors, this study reveals that scientist prestige and experience have opposite 
+            associations with AI knowledge use. Prestige correlates with citing highly visible, 
+            mainstream AI work — converging attention toward a narrow set of "hits" — while 
+            experience is associated with drawing on less visible, longer-tail AI literature. 
+            This divergence persists both within and outside Computer Science, suggesting that 
+            prestige may drive knowledge concentration while experience preserves the diversity 
+            essential for long-term scientific discovery.
+          </p>
+          <div class="figure-meta">
+            <span>🤖 AI & Science</span>
+            <span>📚 Bibliometrics</span>
+            <span>📄 JASIST</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Disruption Index -->
+      <div class="gallery-item" data-category="science">
+        <div class="figure-container">
+          <img src="assets/images/research-figures/placeholder-2.png" alt="Disruption Index Measures Idea Displacement">
+          <div class="figure-overlay">
+            <span class="figure-category">Science of Science</span>
+          </div>
+        </div>
+        <div class="figure-content">
+          <h3>The Disruption Index Measures Displacement Between a Paper and Its Most-Cited Reference</h3>
+          <p>
+            Through mathematical decomposition and large-scale bibliometric evidence from 
+            49 million journal articles, this study clarifies what the Disruption Index truly 
+            measures: a paper's ability to displace the dominant idea represented by its 
+            most-cited reference. Because citation counts among references follow Zipf's Law, 
+            competition is overwhelmingly shaped by the focal paper and its top predecessor, 
+            making the metric robust to "citation inflation." Breakthroughs, from this 
+            perspective, arise not only from generating novel ideas but from replacing 
+            established ones.
+          </p>
+          <div class="figure-meta">
+            <span>💡 Innovation Measurement</span>
+            <span>📚 Citation Analysis</span>
+            <span>📄 Quantitative Science Studies</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 8: Innovation by Displacement -->
+      <div class="gallery-item" data-category="science">
+        <div class="figure-container">
+          <img src="assets/images/research-figures/placeholder-8.png" alt="Innovation by Displacement">
+          <div class="figure-overlay">
+            <span class="figure-category">Science of Science</span>
+          </div>
+        </div>
+        <div class="figure-content">
+          <h3>Innovation by Displacement: Why Novel Recombination Rarely Overturns Paradigms</h3>
+          <p>
+            Based on a analysis of 41 million papers (1965-2024), this research challenges the prevailing recombinant growth theory. It uncovers a robust <strong>negative correlation</strong> between novelty and disruption: while "atypical combinations" of distant knowledge generate immediate attention, they consistently fail to displace entrenched ideas. True breakthroughs emerge not from broad search, but from focused, <strong>local displacement</strong>—where a new idea directly supplants its dominant predecessor within the same topic. This structural tension explains the modern "productivity-progress paradox," where science produces more novel combinations than ever, yet fundamental breakthroughs remain rare.
+          </p>
+          <div class="figure-meta">
+            <span>🔄 Displacement vs. Recombination</span>
+            <span>📉 Negative Correlation</span>
+            <span>📄 Working Paper / Draft</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Gallery Navigation -->
+    <div class="gallery-nav reveal">
+      <button class="gallery-nav-btn" id="prevBtn">&#8249;</button>
+      <div class="gallery-dots" id="galleryDots"></div>
+      <button class="gallery-nav-btn" id="nextBtn">&#8250;</button>
+    </div>
+  </section>
+
+  <!-- CV Section -->
+  <section id="cv" class="cv-section">
+    <div class="section-header reveal">
+      <h2>Curriculum Vitae</h2>
+      <p>Complete academic and professional information</p>
+    </div>
+    
+    <div class="cv-card reveal">
+      <div class="cv-header">
+        <h3>CV / Resume</h3>
+        <div class="cv-actions">
+          <a href="blog/CV_Linzhuo%20Li.pdf" class="btn btn-primary" download>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download
+          </a>
+          <a href="blog/CV_Linzhuo%20Li.pdf" class="btn btn-secondary" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            Open
+          </a>
+        </div>
+      </div>
+      <div class="cv-embed">
+        <iframe src="blog/CV_Linzhuo%20Li.pdf" title="CV Preview"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Linzhuo Li. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Create floating particles
+    function createParticles() {
+      const container = document.getElementById('particles');
+      const particleCount = 30;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+        container.appendChild(particle);
+      }
+    }
+    createParticles();
+
+    // Gallery functionality
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const dotsContainer = document.getElementById('galleryDots');
+    let currentIndex = 0;
+    let filteredItems = Array.from(galleryItems);
+
+    // Create dots
+    function createDots() {
+      dotsContainer.innerHTML = '';
+      filteredItems.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (index === currentIndex ? ' active' : '');
+        dot.addEventListener('click', () => showItem(index));
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    // Show specific item
+    function showItem(index) {
+      // Hide all items first
+      galleryItems.forEach(item => item.classList.remove('active'));
+      
+      currentIndex = index;
+      if (filteredItems[currentIndex]) {
+        filteredItems[currentIndex].classList.add('active');
+      }
+      
+      // Update dots
+      document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    // Filter functionality
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        const filter = this.dataset.filter;
+        
+        if (filter === 'all') {
+          filteredItems = Array.from(galleryItems);
+        } else {
+          filteredItems = Array.from(galleryItems).filter(item => 
+            item.dataset.category === filter
+          );
+        }
+        
+        currentIndex = 0;
+        createDots();
+        showItem(0);
+      });
+    });
+
+    // Navigation buttons
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + filteredItems.length) % filteredItems.length;
+      showItem(currentIndex);
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % filteredItems.length;
+      showItem(currentIndex);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        currentIndex = (currentIndex - 1 + filteredItems.length) % filteredItems.length;
+        showItem(currentIndex);
+      } else if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % filteredItems.length;
+        showItem(currentIndex);
+      }
+    });
+
+    // Initialize: create dots AND show the first item by default
+    createDots();
+    showItem(0);
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
