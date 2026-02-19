@@ -421,11 +421,13 @@
       background: #fff;
       border: 1px solid rgba(196, 58, 82, 0.08);
       box-shadow: 0 8px 40px rgba(196, 58, 82, 0.06);
+      height: 420px;           /* 固定高度 */
     }
 
     .figure-container img {
       width: 100%;
-      height: auto;
+      height: 100%;            /* 撑满容器 */
+      object-fit: contain;     /* 完整显示图片，不裁切 */
       display: block;
       transition: transform 0.5s;
     }
@@ -903,12 +905,12 @@
         <div class="figure-content">
           <h3>Innovation by Displacement: Why Novel Recombination Rarely Overturns Paradigms</h3>
           <p>
-            Based on a analysis of 41 million papers (1965-2024), this research challenges the prevailing recombinant growth theory. It uncovers a robust <strong>negative correlation</strong> between novelty and disruption: while "atypical combinations" of distant knowledge generate immediate attention, they consistently fail to displace entrenched ideas. True breakthroughs emerge not from broad search, but from focused, <strong>local displacement</strong>—where a new idea directly supplants its dominant predecessor within the same topic. This structural tension explains the modern "productivity-progress paradox," where science produces more novel combinations than ever, yet fundamental breakthroughs remain rare.
+            Based on an analysis of 41 million papers (1965-2024), this research challenges the prevailing recombinant growth theory. It uncovers a robust <strong>negative correlation</strong> between novelty and disruption: while "atypical combinations" of distant knowledge generate immediate attention, they consistently fail to displace entrenched ideas. True breakthroughs emerge not from broad search, but from focused, <strong>local displacement</strong>. This structural tension explains the modern "productivity-progress paradox," where science produces more novel combinations than ever, yet fundamental breakthroughs remain rare.
           </p>
           <div class="figure-meta">
             <span>🔄 Displacement vs. Recombination</span>
             <span>📉 Negative Correlation</span>
-            <span>📄 Working Paper / Draft</span>
+            
           </div>
         </div>
       </div>
